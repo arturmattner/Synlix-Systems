@@ -90,24 +90,6 @@ ActiveRecord::Schema.define(:version => 20131118195153) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "mo_bos", :force => true do |t|
-    t.string   "name"
-    t.string   "chipset"
-    t.integer  "cpu_id"
-    t.integer  "ram_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "mobos", :force => true do |t|
-    t.string   "name"
-    t.string   "chipset"
-    t.integer  "cpu_id"
-    t.integer  "ram_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "orders", :force => true do |t|
     t.string   "status"
     t.decimal  "pst_rate"
