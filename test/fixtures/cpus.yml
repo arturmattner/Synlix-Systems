@@ -2,12 +2,16 @@
 
 one:
   name: MyString
-  vendor: MyString
+  cpuvendor_id: 1
   clock: 9.99
   cores: 1
+  price: 9.99
+  image: MyString
 
 two:
   name: MyString
-  vendor: MyString
+  cpuvendor_id: 1
   clock: 9.99
   cores: 1
+  price: 9.99
+  image: MyString

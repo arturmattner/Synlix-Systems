@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131119041233) do
+ActiveRecord::Schema.define(:version => 20131119050706) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -48,13 +48,19 @@ ActiveRecord::Schema.define(:version => 20131119041233) do
 
   create_table "cpus", :force => true do |t|
     t.string   "name"
-    t.string   "vendor"
+    t.integer  "cpuvendor_id"
     t.decimal  "clock"
     t.integer  "cores"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
     t.decimal  "price"
     t.string   "image"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "cpuvendors", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "customers", :force => true do |t|
@@ -113,14 +119,19 @@ ActiveRecord::Schema.define(:version => 20131119041233) do
 
   create_table "rams", :force => true do |t|
     t.string   "name"
-    t.string   "vendor"
-    t.integer  "clocks"
+    t.integer  "ramvendor_id"
+    t.string   "clocks"
     t.integer  "speed"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
     t.decimal  "price"
     t.string   "image"
-    t.integer  "capacity"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "ramvendors", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

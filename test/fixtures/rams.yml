@@ -2,12 +2,16 @@
 
 one:
   name: MyString
-  vendor: MyString
-  clocks: 1
+  ramvendor_id: 1
+  clocks: MyString
   speed: 1
+  price: 9.99
+  image: MyString
 
 two:
   name: MyString
-  vendor: MyString
-  clocks: 1
+  ramvendor_id: 1
+  clocks: MyString
   speed: 1
+  price: 9.99
+  image: MyString
