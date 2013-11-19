@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  vendor: MyString
+  clocks: 1
+  speed: 1
+
+two:
+  name: MyString
+  vendor: MyString
+  clocks: 1
+  speed: 1
