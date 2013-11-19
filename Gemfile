@@ -27,6 +27,7 @@ gem "jquery-rails", "< 3.0.0"
 gem 'activeadmin'
 gem "meta_search", '>= 1.1.0.pre'
 gem 'country-select'
+gem 'carrierwave'
 
 #custom end
 
