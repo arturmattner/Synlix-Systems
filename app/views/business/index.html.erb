@@ -1,2 +1,27 @@
-<h1>Synlix Systems</h1>
-<p>Test Data for Business Logic</p>
+<h3>CPU:</h3>
+
+  <% @cpu_products.each do |p| %>
+    <div class="product">
+      <div class="product_image">
+        <%= image_tag "Cpu/Cpu_#{p.id}.jpg" %><br />
+      </div>
+      Name: <%= p.name %><br />
+      Clock: <%= p.clock %><br />
+      Cores: <%= p.cores %><br />
+      Price: $<%= p.price %><br />
+    </div>
+  <% end %>
+
+<h3>RAM:</h3>
+
+  <% @ram_products.each do |p| %>
+    <div class="product">
+      <div class="product_image">
+        <%= image_tag "Ram/Ram_#{p.id}.jpg" %><br />
+      </div>
+      Name: <%= p.name %><br />
+      Clocks: <%= p.clocks %><br />
+      Speed: <%= p.speed %><br />
+      Price: $<%= p.price %><br />
+    </div>
+  <% end %>

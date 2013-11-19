@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Synlixsystems</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<header>
-  <%= image_tag 'logo.png' %>
-<header>
-<body>
+  <head>
+    <title>Synlixsystems</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
 
-<%= yield %>
+  <body>
 
-</body>
+  <header>
+    <%= image_tag 'logo.png' %>
+  </header>
+
+  <%= yield %>
+
+  </body>
+
 </html>
