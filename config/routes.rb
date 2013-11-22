@@ -2,6 +2,8 @@ Synlixsystems::Application.routes.draw do
 
   root :to => 'business#index'
 
+  match 'display/:type/:id' => "business#show", as: "display_product"
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 

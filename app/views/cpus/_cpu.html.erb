@@ -2,7 +2,7 @@
   <div class="product_image">
     <%= image_tag "Cpu/Cpu_#{cpu.id}.jpg" %><br />
   </div>
-  Name: <%=  link_to cpu.name, display_product_path(:type => cpu.type, :id => cpu.id) %><br />
+  Name: <%= link_to cpu.name, display_product_path(:type => cpu.type, :id => cpu.id) %><br />
   Clock: <%= cpu.clock %><br />
   Cores: <%= cpu.cores %><br />
   Price: $<%= cpu.price %><br />

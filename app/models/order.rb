@@ -4,4 +4,6 @@ class Order < ActiveRecord::Base
   has_one :ram, through: :lineitem
   has_many :lineitems
   attr_accessible :customer_id, :gst_rate, :hst_rate, :pst_rate, :status
+  validates :customer_id, :status, :presence => true
+  validates :gst_rate, :hst_rate, :pst_rate, :numericality => true
 end
