@@ -1,6 +1,11 @@
 class BusinessController < ApplicationController
   def index
-    @cpu_products = Cpu.all
-    @ram_products = Ram.all
+    @cpus = Cpu.all
+  end
+
+  def show
+    if params[:type] == "cpu"
+      @product = Cpu.find(params[:id])
+    end
   end
 end
