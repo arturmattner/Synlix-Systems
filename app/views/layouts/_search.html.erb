@@ -1,0 +1,13 @@
+<%= form_tag search_results_path do %>
+  <%= text_field_tag :keywords %>
+  <%= submit_tag 'Search' %><br/>
+  Options: 
+  <label>
+    <%= check_box_tag 'Cpu', 'cpu' %>
+    CPU
+  </label>
+  <label>
+    <%= check_box_tag 'Ram', 'ram' %>
+    RAM
+  </label>
+<% end %>

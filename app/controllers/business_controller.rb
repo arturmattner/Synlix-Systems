@@ -17,6 +17,14 @@ class BusinessController < ApplicationController
   end
 
   def search_results
-    @cpus = Cpu.where("name LIKE ?", "%#{params[:keywords]}%")
+    if params[:cpu] == 1
+      @products = Cpu.where("name LIKE ?", "%#{params[:keywords]}%")
+    elsif params[:ram] == 1
+      @products = Ram.where("name LIKE ?", "%#{params[:keywords]}%")
+    else
+      cpu = Cpu.where("name LIKE ?", "%#{params[:keywords]}%")
+      ram = Ram.where("name LIKE ?", "%#{params[:keywords]}%")
+      @products = cpu + ram
+    end
   end
 end

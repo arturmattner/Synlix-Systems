@@ -1,9 +1,12 @@
 <section class="product">
-  <div class="product_image">
+  <%= link_to ram.name, display_product_path(:type => ram.type, :id => ram.id) %>
+  <div class="product-image">
     <%= image_tag "Ram/Ram_#{ram.id}.jpg" %><br />
   </div>
-  Name: <%= link_to ram.name, display_product_path(:type => ram.type, :id => ram.id) %><br />
-  Clocks: <%= ram.clocks %><br />
-  Speed: <%= ram.speed %><br />
-  Price: $<%= ram.price %><br />
+  <section class="product-description">
+    Details/Specifications:<br />
+    Clocks: <%= ram.clocks %><br />
+    Speed: <%= ram.speed %><br />
+    Price: $<%= ram.price %><br />
+  </section>
 </section>
