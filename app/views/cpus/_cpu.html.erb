@@ -1,9 +1,12 @@
 <section class="product">
-  <div class="product_image">
+  <%= link_to cpu.name, display_product_path(:type => cpu.type, :id => cpu.id) %>
+  <div class="product-image">
     <%= image_tag "Cpu/Cpu_#{cpu.id}.jpg" %><br />
   </div>
-  Name: <%= link_to cpu.name, display_product_path(:type => cpu.type, :id => cpu.id) %><br />
+  <section class="product-description">
+  Details/Specifications:<br />
   Clock: <%= cpu.clock %><br />
   Cores: <%= cpu.cores %><br />
   Price: $<%= cpu.price %><br />
+</section>
 </section>

@@ -1,8 +1,20 @@
 Synlixsystems::Application.routes.draw do
 
-  root :to => 'business#index'
+  root :to => 'business#index', :via => :get
 
-  match 'display/:type/:id' => "business#show", as: "display_product"
+  match 'about' => "business#about", :as => "about", :via => :get
+
+  match 'contact' => "business#contact", :as => "contact", :via => :get
+
+  match 'buildpc' => "business#buildpc", :as => "buildpc", :via => :get
+
+  match 'product' => "business#product", :as => "product", :via => :get
+
+  match 'display/:type/:id' => "business#show", :as => "display_product", :via => :get
+
+  match 'search' => "business#search", :as => 'search', :via => :get
+
+  match 'search_results' => "business#search_results", :as => 'search_results', :via => :post
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

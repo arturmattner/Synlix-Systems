@@ -11,4 +11,12 @@ class BusinessController < ApplicationController
       @product = Ram.find(params[:id])
     end
   end
+
+  def search
+    
+  end
+
+  def search_results
+    @cpus = Cpu.where("name LIKE ?", "%#{params[:keywords]}%")
+  end
 end
