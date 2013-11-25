@@ -5,5 +5,10 @@
       <p>Sorry your search for '<%= params[:keywords] %>' returned no results.</p>
   <% end %>
 
-  <%= render @products %>
+  <% if params[:keywords].empty? %>
+    <p>Please enter search data.</p>
+  <% else %>
+    <%= render @products %>
+  <% end %>
+  
 </section>
