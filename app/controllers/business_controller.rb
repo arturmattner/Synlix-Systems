@@ -17,13 +17,13 @@ class BusinessController < ApplicationController
   end
 
   def search_results
-    if params[:cpu] == 1
-      @products = Cpu.where("name LIKE ?", "%#{params[:keywords]}%")
-    elsif params[:ram] == 1
-      @products = Ram.where("name LIKE ?", "%#{params[:keywords]}%")
+    if params[:value] == "cpu"
+      @products = Cpu.where("name LIKE ?", "%#{params[:keywords]}%").order(:name)
+    elsif params[:value] == "ram"
+      @products = Ram.where("name LIKE ?", "%#{params[:keywords]}%").order(:name)
     else
-      cpu = Cpu.where("name LIKE ?", "%#{params[:keywords]}%")
-      ram = Ram.where("name LIKE ?", "%#{params[:keywords]}%")
+      cpu = Cpu.where("name LIKE ?", "%#{params[:keywords]}%").order(:name)
+      ram = Ram.where("name LIKE ?", "%#{params[:keywords]}%").order(:name)
       @products = cpu + ram
     end
   end

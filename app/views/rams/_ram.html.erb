@@ -1,5 +1,5 @@
 <section class="product">
-  <%= link_to ram.name, display_product_path(:type => ram.type, :id => ram.id) %>
+  <%= link_to ram.name, display_product_path(:type => ram.type, :id => ram.id), :class => "product-name" %>
   <div class="product-image">
     <%= image_tag "Ram/Ram_#{ram.id}.jpg" %><br />
   </div>

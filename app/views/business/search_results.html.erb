@@ -1,7 +1,9 @@
-<h2>Search Results</h2>
+<section id="container-main">
+  <h2>Search Results</h2>
 
-<% if @products.empty? %>
-    <p>Sorry your search for '<%= params[:keywords] %>' returned no results.</p>
-<% end %>
+  <% if @products.empty? %>
+      <p>Sorry your search for '<%= params[:keywords] %>' returned no results.</p>
+  <% end %>
 
-<%= render @products %>
+  <%= render @products %>
+</section>
