@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  memory: 9.99
+  coreclock: 1
+  memoryclock: 1
+  gfxvendor_id: 1
+
+two:
+  name: MyString
+  memory: 9.99
+  coreclock: 1
+  memoryclock: 1
+  gfxvendor_id: 1
