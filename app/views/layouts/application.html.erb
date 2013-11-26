@@ -5,17 +5,27 @@
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   </head>
 
   <body>
 
-  <header>
-    <%= image_tag 'logo.png' %>
-  </header>
+    <div class="wrapper">
 
-  <%= render "layouts/navigation" %>
+      <header>
+        <%= image_tag 'logo.png', :class => "logo" %>
+        <%= render "layouts/navigation" %>
+      </header>
 
-  <%= yield %>
+      
+
+      <%= yield %>
+
+      <footer>
+        
+      </footer>
+
+    </div>
 
   </body>
 

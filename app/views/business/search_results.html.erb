@@ -1,14 +1,15 @@
 <section id="container-main">
-  <h2>Search Results</h2>
+  <section class="section">
+    <h2>Search Results</h2>
 
-  <% if @products.empty? %>
-      <p>Sorry your search for '<%= params[:keywords] %>' returned no results.</p>
-  <% end %>
+    <% if @products.empty? %>
+        <p>No results found for "<%= params[:keywords] %>"</p>
+    <% end %>
 
-  <% if params[:keywords].empty? %>
-    <p>Please enter search data.</p>
-  <% else %>
-    <%= render @products %>
-  <% end %>
-  
+    <% if params[:keywords].empty? %>
+      <p>Please enter search data.</p>
+    <% else %>
+      <%= render @products %>
+    <% end %>
+  </section>
 </section>

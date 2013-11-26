@@ -1,10 +1,10 @@
 <section class="product">
-  <%= link_to cpu.name, display_product_path(:type => cpu.type, :id => cpu.id), :class => "product-name" %>
-  <div class="product-image">
-    <%= image_tag "Cpu/Cpu_#{cpu.id}.jpg" %><br />
+  <%= link_to cpu.name, display_product_path(:type => cpu.type, :id => cpu.id), :class => "product-name" %><br />
+  <div class="product-img">
+    <%= link_to image_tag("Cpu/Cpu_#{cpu.id}.jpg"), display_product_path(:type => cpu.type, :id => cpu.id), :class => "product-name" %><br />
   </div>
-  <section class="product-description">
-    Details/Specifications:<br />
+  <section class="product-info">
+    Details:<br />
     Clock: <%= cpu.clock %><br />
     Cores: <%= cpu.cores %><br />
     Price: $<%= cpu.price %><br />
