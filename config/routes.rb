@@ -14,6 +14,8 @@ Synlixsystems::Application.routes.draw do
 
   match 'search' => "business#search", :as => 'search', :via => :get
 
+  match 'cart' => "business#cart", :as => 'cart', :via => :get
+
   match 'search_results' => "business#search_results", :as => 'search_results', :via => :post
 
   devise_for :admin_users, ActiveAdmin::Devise.config
