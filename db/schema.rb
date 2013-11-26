@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131126042919) do
+ActiveRecord::Schema.define(:version => 20131126043834) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -74,6 +74,18 @@ ActiveRecord::Schema.define(:version => 20131126042919) do
     t.integer  "province_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "gfxes", :force => true do |t|
+    t.string   "name"
+    t.decimal  "memory"
+    t.integer  "coreclock"
+    t.integer  "memoryclock"
+    t.integer  "gfxvendor_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "image"
+    t.decimal  "price"
   end
 
   create_table "gfxvendors", :force => true do |t|
