@@ -34,6 +34,14 @@ $red: #C70B0B ;
     line-height: $line-height;
 }
 
+body
+{
+    background-image:url('bg.jpg');
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-position:right bottom;
+}
+
 h1
 {
     font-size: $h1;
@@ -74,7 +82,7 @@ a:hover
 header
 {
     padding: $baseu 0;
-    margin: 0 0 $baseu;
+    margin: 0 0 $baseu 0;
     width: 100%;
     float:left;
     background-color: $red;
@@ -136,7 +144,7 @@ header
 
     h2
     {
-        margin: 0 0 .24*$baseu;
+        margin: 0 0 $baseu;
         background-color: #eee;
         padding: .25*$baseu $baseu;
     }
@@ -146,6 +154,8 @@ header
         width: 28%;
         margin: 0 8% $baseu 0;
         float:left;
+        background-color: #FFFFFF;
+        box-shadow:2px 2px 1px 0px #999999;
 
         .product-name
         {
