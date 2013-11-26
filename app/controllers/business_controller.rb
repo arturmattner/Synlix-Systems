@@ -25,6 +25,10 @@ class BusinessController < ApplicationController
     
   end
 
+  def cart
+    
+  end
+
   def search_results
     if params[:cpu] == "cpu" && params[:ram] == "ram" && params[:gfx] == "gfx"
       cpu = Cpu.where("name LIKE ?", "%#{params[:keywords]}%").order(:name)
