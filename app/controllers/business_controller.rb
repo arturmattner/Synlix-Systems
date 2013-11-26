@@ -5,6 +5,12 @@ class BusinessController < ApplicationController
     @gfxes = Gfx.all
   end
 
+  def product
+    @cpus = Cpu.all
+    @rams = Ram.all
+    @gfxes = Gfx.all
+  end
+
   def show
     if params[:type] == "cpu"
       @product = Cpu.find(params[:id])
