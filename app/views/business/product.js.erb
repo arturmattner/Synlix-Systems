@@ -1,0 +1,3 @@
+$(".cpu-section").html("<%= escape_javascript(render @cpus) %><%= escape_javascript(paginate @cpus, :remote => true) %>");
+$(".ram-section").html("<%= escape_javascript(render @rams) %><%= escape_javascript(paginate @rams, :remote => true) %>");
+$(".gfx-section").html("<%= escape_javascript(render @gfxes) %><%= escape_javascript(paginate @gfxes, :remote => true) %>");

@@ -6,9 +6,9 @@ class BusinessController < ApplicationController
   end
 
   def product
-    @cpus = Cpu.all
-    @rams = Ram.all
-    @gfxes = Gfx.all
+    @cpus = Cpu.order(:name).page(params[:page]).per(9)
+    @rams = Ram.order(:name).page(params[:page]).per(9)
+    @gfxes = Gfx.order(:name).page(params[:page]).per(9)
   end
 
   def show

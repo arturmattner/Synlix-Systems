@@ -29,6 +29,7 @@ gem "meta_search", '>= 1.1.0.pre'
 gem 'country-select'
 gem 'carrierwave'
 gem "mini_magick", '3.5.0'
+gem 'kaminari'
 
 #custom end
 
