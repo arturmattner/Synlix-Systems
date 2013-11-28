@@ -1,8 +1,8 @@
 class BusinessController < ApplicationController
   def index
-    @cpus = Cpu.all
-    @rams = Ram.all
-    @gfxes = Gfx.all
+    @cpus = Cpu.order("updated_at DESC").limit(3)
+    @rams = Ram.order("updated_at DESC").limit(3)
+    @gfxes = Gfx.order("updated_at DESC").limit(3)
   end
 
   def product

@@ -23,7 +23,6 @@ $h2: 1.5em;
 $h3: 1.2em;
 $baseu: $font-size*1.618;
 $red: #C70B0B ;
-$link-colour: #720C0C;
 
 /*====@global fonts===*/
 
@@ -70,7 +69,7 @@ h3
 a
 {
     text-decoration: none;
-    color: $link-colour;
+    color: #720C0C;
 }
 
 a:hover
