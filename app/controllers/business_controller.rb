@@ -30,6 +30,14 @@ class BusinessController < ApplicationController
     redirect_to(:back)
   end
 
+  def about
+    @page = Page.where(:title => 'About').first
+  end
+
+  def contact
+    @page = Page.where(:title => 'Contact').first
+  end
+
   def remove_cart
     reset_session
     # counter = 0
