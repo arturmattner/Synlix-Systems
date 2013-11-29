@@ -1,7 +1,9 @@
 <section id="container-main">
+
   <section class="cart-section section">
     <h2>Shopping Cart</h2>
   </section>
+
   <section class="cart-contents section">
     <% if session[:type].empty? && session[:id].empty? %>
       <p>There are no Items in your cart.</p>
@@ -9,11 +11,20 @@
       <%= render @products %>
     <% end %>
   </section>
+
   <% if not session[:type].empty? && session[:id].empty? %>
-    <section class="checkout-section section">
+
+    <section class="details-section section">
       <h2>Details</h2>
-      <p>Running Total: $<%= @total %><p>
-      <p><%= link_to 'Clear Cart', remove_cart_path %></p>
+      <section class="p-section">
+        <p class="running-total">Running Total: $<%= @total %><p>
+        <p class="clear-cart"><%= link_to 'Clear Cart', remove_cart_path %></p>
+      </section>
+    </section>
+
+    <section class="checkout-section section">
+      <h2>Checkout</h2>
+
     </section>
   <% end %>
 </section>

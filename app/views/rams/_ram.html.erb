@@ -10,7 +10,7 @@
     Speed: <%= ram.speed %><br />
     Price: $<%= ram.price.round(2) %><br />
     <% if not request.env['PATH_INFO'] == "/cart" %>
-      <%= link_to 'Buy', add_cart_path(:type => ram.type, :id => ram.id)%>
+      <%= link_to 'Buy', add_cart_path(:type => ram.type, :id => ram.id, :class => "buy")%>
     <% end %>
   </section>
 </section>

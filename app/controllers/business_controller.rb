@@ -81,7 +81,7 @@ class BusinessController < ApplicationController
   end
 
   def cart
-
+    @customer = Customer.new
   end
 
 protected
@@ -106,4 +106,5 @@ protected
       counter += 1
     end
   end
+
 end
