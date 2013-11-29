@@ -6,7 +6,7 @@ Synlixsystems::Application.routes.draw do
 
   match 'contact' => "business#contact", :as => "contact", :via => :get
 
-  match 'buildpc' => "business#buildpc", :as => "buildpc", :via => :get
+  #match 'buildpc' => "business#buildpc", :as => "buildpc", :via => :get
 
   match 'product' => "business#product", :as => "product", :via => :get
 
@@ -15,6 +15,10 @@ Synlixsystems::Application.routes.draw do
   match 'search' => "business#search", :as => 'search', :via => :get
 
   match 'cart' => "business#cart", :as => 'cart', :via => :get
+
+  match 'cart/:type/:id/add_cart' => "business#add_cart", :as => 'add_cart', :via => :get
+
+  match 'cart/remove_cart' => "business#remove_cart", :as => 'remove_cart', :via => :get
 
   match 'search_results' => "business#search_results", :as => 'search_results', :via => :post
 

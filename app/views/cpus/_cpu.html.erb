@@ -8,5 +8,8 @@
     Clock: <%= cpu.clock %><br />
     Cores: <%= cpu.cores %><br />
     Price: $<%= cpu.price.round(2) %><br />
+    <% if not request.env['PATH_INFO'] == "/cart" %>
+      <%= link_to 'Buy', add_cart_path(:type => cpu.type, :id => cpu.id)%>
+    <% end %>
   </section>
 </section>

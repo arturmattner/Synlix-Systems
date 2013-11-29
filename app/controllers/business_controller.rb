@@ -1,4 +1,7 @@
 class BusinessController < ApplicationController
+
+  before_filter :initialize_session
+
   def index
     @cpus = Cpu.order("updated_at DESC").limit(3)
     @rams = Ram.order("updated_at DESC").limit(3)
@@ -21,12 +24,36 @@ class BusinessController < ApplicationController
     end
   end
 
-  def search
-    
+  def add_cart
+    session[:type] << params[:type]
+    session[:id] << params[:id].to_i
+    redirect_to(:back)
   end
 
-  def cart
-    
+  def remove_cart
+    reset_session
+    # counter = 0
+    # session[:type].each do |product|
+    #   if product == "cpu"
+    #     id = params[:id].to_i
+    #     if session[:id][counter].to_i == id
+    #       session[:type].delete(params[:type][counter])
+    #       session[:id].delete([:id][counter])
+    #     end
+    #   elsif product == "ram"
+    #     if session[:id][counter].to_i == params[:id].to_i
+    #       session[:type].delete(counter)
+    #       session[:id].delete(counter)
+    #     end
+    #   elsif product == "gfx"
+    #     if session[:id][counter].to_i == params[:id].to_i
+    #       session[:type].delete(counter)
+    #       session[:id].delete(counter)
+    #     end
+    #   end
+    #   counter += 1
+    # end
+    redirect_to(:back)
   end
 
   def search_results
@@ -46,6 +73,37 @@ class BusinessController < ApplicationController
       ram = Ram.where("name LIKE ?", "%#{params[:keywords]}%").order(:name)
       gfx = Gfx.where("name LIKE ?", "%#{params[:keywords]}%").order(:name)
       @products = cpu + ram + gfx
+    end
+  end
+
+  def search
+    
+  end
+
+  def cart
+
+  end
+
+protected
+
+  def initialize_session
+    session[:type] ||= []
+    session[:id] ||= []
+    @products = []
+    @total = 0.00
+    counter = 0
+    session[:type].each do |product|
+      if product == "cpu"
+        @products << Cpu.find(session[:id][counter].to_i)
+        @total += Cpu.find(session[:id][counter].to_i).price.round(2)
+      elsif product == "ram"
+        @products << Ram.find(session[:id][counter].to_i)
+        @total += Ram.find(session[:id][counter].to_i).price.round(2)
+      elsif product == "gfx"
+        @products << Gfx.find(session[:id][counter].to_i)
+        @total += Gfx.find(session[:id][counter].to_i).price.round(2)
+      end
+      counter += 1
     end
   end
 end

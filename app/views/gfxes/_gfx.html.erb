@@ -9,5 +9,8 @@
     Core Clock: <%= gfx.coreclock %>MHz<br />
     Memory Clock: <%= gfx.memoryclock %>Mhz<br />
     Price: $<%= gfx.price.round(2) %><br />
+    <% if not request.env['PATH_INFO'] == "/cart" %>
+      <%= link_to 'Buy', add_cart_path(:type => gfx.type, :id => gfx.id)%>
+    <% end %>
   </section>
 </section>

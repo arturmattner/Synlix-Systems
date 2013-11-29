@@ -9,5 +9,8 @@
     Clocks: <%= ram.clocks %><br />
     Speed: <%= ram.speed %><br />
     Price: $<%= ram.price.round(2) %><br />
+    <% if not request.env['PATH_INFO'] == "/cart" %>
+      <%= link_to 'Buy', add_cart_path(:type => ram.type, :id => ram.id)%>
+    <% end %>
   </section>
 </section>
