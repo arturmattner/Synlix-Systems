@@ -1,0 +1,18 @@
+%section#container-main
+  %section.cart-section.section
+    %h2 Shopping Cart
+  %section.cart-contents.section
+    - if session[:type].empty? && session[:id].empty?
+      %p There are no Items in your cart.
+    - else
+      = render @products
+  - if not session[:type].empty? && session[:id].empty?
+    %section.details-section.section
+      %h2 Details
+      %section.p-section
+        %p.running-total
+          Running Total: $#{@total}
+        %p
+        %p.clear-cart= link_to 'Clear Cart', remove_cart_path
+    %section.checkout-section.section
+      %h2 Checkout

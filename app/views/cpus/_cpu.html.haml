@@ -1,0 +1,17 @@
+%section.product
+  = link_to cpu.name, display_product_path(:type => cpu.type, :id => cpu.id), :class => "product-name"
+  %br/
+  .product-img
+    = link_to image_tag("Cpu/Cpu_#{cpu.id}.jpg"), display_product_path(:type => cpu.type, :id => cpu.id), :class => "product-name"
+    %br/
+  %section.product-info
+    Details:
+    %br/
+    Clock: #{cpu.clock}
+    %br/
+    Cores: #{cpu.cores}
+    %br/
+    Price: $#{cpu.price.round(2)}
+    %br/
+    - if not request.env['PATH_INFO'] == "/cart"
+      = link_to 'Buy', add_cart_path(:type => cpu.type, :id => cpu.id, :class => "buy")

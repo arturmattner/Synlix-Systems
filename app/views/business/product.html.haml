@@ -1,0 +1,18 @@
+%section#container-main
+  %section.section
+    %h2 Products
+  %section.section
+    %h2= link_to 'CPU', '#', :class => "cpu-drop"
+    %section.section.cpu-section
+      = render @cpus
+      = paginate @cpus, :remote => true
+  %section.section
+    %h2= link_to 'RAM', '#', :class => "ram-drop"
+    %section.section.ram-section
+      = render @rams
+      = paginate @rams, :remote => true
+  %section.section
+    %h2= link_to'Graphics', '#', :class => "gfx-drop"
+    %section.section.gfx-section
+      = render @gfxes
+      = paginate @gfxes, :remote => true

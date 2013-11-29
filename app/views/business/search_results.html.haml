@@ -1,0 +1,11 @@
+%section#container-main
+  %section.section
+    %h2 Search Results
+    - if @products.empty?
+      %p
+        No results found for "#{params[:keywords]}"
+    - if params[:keywords].empty?
+      %p Please enter search data.
+    - else
+      = render @products
+  = link_to 'Back', root_path

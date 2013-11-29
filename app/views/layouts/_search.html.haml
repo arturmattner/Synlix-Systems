@@ -1,0 +1,14 @@
+%section.search-section
+  = form_tag search_results_path do
+    = text_field_tag :keywords
+    = submit_tag 'Search'
+    %br/
+    %label
+      = check_box_tag 'cpu', 'cpu'
+      CPU
+    %label
+      = check_box_tag 'ram', 'ram'
+      RAM
+    %label
+      = check_box_tag 'gfx', 'gfx'
+      GFX
