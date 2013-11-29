@@ -90,6 +90,11 @@ class BusinessController < ApplicationController
 
   def cart
     @customer = Customer.new
+    @provinces = Province.all
+  end
+
+  def checkout
+    customer = Customer.create(params:customer)
   end
 
 protected

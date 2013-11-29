@@ -22,7 +22,9 @@ Synlixsystems::Application.routes.draw do
 
   match 'search_results' => "business#search_results", :as => 'search_results', :via => :post
 
-  resources :customers
+  match 'cart/checkout' => "business#checkout", :as => 'checkout', :via => :post
+
+  #resources :customers
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
