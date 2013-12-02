@@ -40,27 +40,6 @@ class BusinessController < ApplicationController
 
   def remove_cart
     reset_session
-    # counter = 0
-    # session[:type].each do |product|
-    #   if product == "cpu"
-    #     id = params[:id].to_i
-    #     if session[:id][counter].to_i == id
-    #       session[:type].delete(params[:type][counter])
-    #       session[:id].delete([:id][counter])
-    #     end
-    #   elsif product == "ram"
-    #     if session[:id][counter].to_i == params[:id].to_i
-    #       session[:type].delete(counter)
-    #       session[:id].delete(counter)
-    #     end
-    #   elsif product == "gfx"
-    #     if session[:id][counter].to_i == params[:id].to_i
-    #       session[:type].delete(counter)
-    #       session[:id].delete(counter)
-    #     end
-    #   end
-    #   counter += 1
-    # end
     redirect_to(:back)
   end
 
@@ -94,7 +73,36 @@ class BusinessController < ApplicationController
   end
 
   def checkout
-    customer = Customer.create(params:customer)
+    @customer = Customer.create(params[:customer])
+    @order = @customer.orders.build
+    @order.pst_rate = @customer.province.pst
+    @order.gst_rate = @customer.province.gst
+    @order.hst_rate = @customer.province.hst
+    @order.status = "New"
+    @order.save
+
+    @products.each do |item|
+      lineitem = @order.lineitems.build
+      if item.type == "cpu"
+        lineitem.cpu_id = item.id
+        lineitem.ram_id = nil
+        lineitem.gfx_id = nil
+        lineitem.price = item.price
+      elsif item.type == "ram"
+        lineitem.ram_id = item.id
+        lineitem.cpu_id = nil
+        lineitem.gfx_id = nil
+        lineitem.price = item.price
+      elsif item.type == "gfx"
+        lineitem.gfx_id = item.id
+        lineitem.ram_id = nil
+        lineitem.cpu_id = nil
+        lineitem.price = item.price
+      end
+      lineitem.save
+    end
+
+    redirect_to :action => :index
   end
 
 protected

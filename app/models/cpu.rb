@@ -1,5 +1,5 @@
 class Cpu < ActiveRecord::Base
-  has_many :orders, through: :lineitems
+  has_many :orders, :through => :lineitems
   has_many :lineitems
   belongs_to :cpuvendor
   mount_uploader :image, ImageUploader
